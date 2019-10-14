@@ -1,10 +1,12 @@
+// const baseurl = "https://api.github.com/users/";
+
 function displayResults(responseJson) {
     // first clear any previous results displayed.
     $('#results-list').empty();
     // iterate through the list of repos. stopping at the last repo.
     for (let i = 0; i <responseJson.length; i++) {
         $('#results-list').append(
-            `<li><a href="${responseJson[i].url}">${responseJson[i].title}</a></li>`)
+            `<li><a href="${responseJson[i].html_url}">${responseJson[i].name}</a></li>`)
     };
     // display results section.
     $('#results').removeClass('hidden');
